@@ -8,10 +8,10 @@
 </head>
 <body>
      <p>
-     <c:out value="${createID}"/> 
+     ${createID} 
      </p>
      <p>
-     <button href= "home.do">HOME</button>
+     <a href="home.do">HOME</a>
      </p>
 </body>
 </html>
