@@ -8,8 +8,11 @@
 <title>Create New Film</title>
 </head>
 <body>
+	<h1>Film you created</h1><br>
 	<c:choose>
 		<c:when test="${! empty createID}">
+	 Film ID: <c:out value="${createID.id}" />
+			<br>
      Title: <c:out value="${createID.title}" />
 			<br>
      Description: <c:out value="${createID.description}" />

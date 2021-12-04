@@ -33,18 +33,14 @@ public class FilmController {
 		
 	}
 	
-<<<<<<< HEAD
-	@RequestMapping(path = "CreateNewFilm.do", method = RequestMethod.POST)
-=======
-	@RequestMapping(path = "createNewFilm.do",  method = RequestMethod.POST)
 
->>>>>>> 05c65e370a506b5fcaeb5ec342ae9d5add862e39
+	@RequestMapping(path = "CreateNewFilm.do", method = RequestMethod.POST)
 	public String createNewFilm(Model model, String title, String description, int releaseYear, String languageId, String rating ) {
 		Film film = new Film();
 		film.setTitle(title);
 		film.setDescription(description);
 		film.setReleaseYear(releaseYear);
-		film.setLanguageId(convertLangId(languageId));
+		film.setLanguageId(convertLangId(languageId, film));
 		film.setRating(rating);
 		System.out.println(rating);
 		filmDao.createFilm(film);
@@ -53,26 +49,32 @@ public class FilmController {
 		
 	}
 	
-	public int convertLangId(String langId) {
+	public int convertLangId(String langId, Film film) {
 		int newLanguageId = 0;
 		switch(langId) {
 		case "English":
 			newLanguageId = 1;
+			film.setLanguageName("English");
 			break;
 		case "Italian":
 			newLanguageId = 2;
+			film.setLanguageName("Italian");
 			break;
 		case "Japanese":
 			newLanguageId = 3;
+			film.setLanguageName("Japanese");
 			break;
 		case "Mandarin":
 			newLanguageId = 4;
+			film.setLanguageName("Mandarin");
 			break;
 		case "French":
 			newLanguageId = 5;
+			film.setLanguageName("French");
 			break;
 		case "German":
 			newLanguageId = 6;
+			film.setLanguageName("German");
 			break;
 		}
 		return newLanguageId;

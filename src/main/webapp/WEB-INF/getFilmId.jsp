@@ -10,6 +10,8 @@
 <body>
 	<c:choose>
 		<c:when test="${! empty Id}">
+	 Film ID: <c:out value="${createID.id}" />
+			<br>
      Title: <c:out value="${Id.title}" />
 			<br>
      Description: <c:out value="${Id.description}" />
