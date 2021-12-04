@@ -21,7 +21,7 @@
  
  <h3>Search Film with keyword</h3>
   <form action="GetFilmByKeyword.do" method="GET">
- 	ID:
+ 	Keyword:
  	<input type="text" name="keyword"/>
  	<input type="submit" value="Find film" />
  </form>
