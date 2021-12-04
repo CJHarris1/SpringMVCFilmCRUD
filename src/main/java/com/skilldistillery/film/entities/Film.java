@@ -1,5 +1,6 @@
 package com.skilldistillery.film.entities;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
@@ -9,7 +10,7 @@ public class Film {
 	private int id;
 	private String title;
 	private String description;
-	private String releaseYear;
+	private LocalDateTime releaseYear;
 	private int languageId;
 	private String languageName;
 	private String rating;
@@ -19,7 +20,7 @@ public class Film {
 
 	}
 
-	public Film(int id, String title, String description, String releaseYear, int languageId, String languageName, String rating,
+	public Film(int id, String title, String description, LocalDateTime releaseYear, int languageId, String languageName, String rating,
 			List<Actor> actors) {
 		this.id = id;
 		this.title = title;
@@ -65,11 +66,11 @@ public class Film {
 		this.description = description;
 	}
 
-	public String getReleaseYear() {
+	public LocalDateTime getReleaseYear() {
 		return releaseYear;
 	}
 
-	public void setReleaseYear(String releaseYear) {
+	public void setReleaseYear(LocalDateTime releaseYear) {
 		this.releaseYear = releaseYear;
 	}
 
