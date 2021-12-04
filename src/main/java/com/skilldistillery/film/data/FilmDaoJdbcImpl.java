@@ -173,10 +173,13 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false);
-			sqltxt = "INSERT INTO film (title, description, language_id) VALUES" + "(?, ?, 1)";
+			sqltxt = "INSERT INTO film (title, description, release_year, language_id, rating ) VALUES" + "(?, ?, ?, ?, ?)";
 			stmt = conn.prepareStatement(sqltxt, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, film.getTitle());
 			stmt.setString(2, film.getDescription());
+			stmt.setString(3, film.getReleaseYear());
+			stmt.setString(4, film.getLanguageId());
+			stmt.setString(5, film.getRating());
 			uc = stmt.executeUpdate();
 			System.out.println(uc + " film record created.");
 			rs = stmt.getGeneratedKeys();
