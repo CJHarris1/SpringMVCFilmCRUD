@@ -9,10 +9,20 @@
 <body>
 <h1>Films R Us!</h1>
 <br>
-<h3>Search Film with id<h3>
+<h3>Search Film with id</h3>
   <form action="GetFilmId.do" method="GET">
  	ID:
  	<input type="text" name="ID"/>
+ 	<input type="submit" value="Find film" />
+ </form>
+ <br><br><br>
+ 
+ 
+ 
+ <h3>Search Film with keyword</h3>
+  <form action="GetFilmByKeyword.do" method="GET">
+ 	ID:
+ 	<input type="text" name="keyword"/>
  	<input type="submit" value="Find film" />
  </form>
  <br><br><br>

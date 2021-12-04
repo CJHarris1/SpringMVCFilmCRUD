@@ -22,8 +22,9 @@
 			<br>
      Rating: <c:out value="${Id.rating}" />
 			<br>
-     Actors: <c:forEach items="${ Id.actors}" var="actor">
-				<p>${actor.firstName }${actor.lastName }</p>
+     Actors: <br><c:forEach items="${ Id.actors}" var="actor">
+				${actor.firstName } ${actor.lastName }
+				<br>
 			</c:forEach>
 		</c:when>
 		<c:otherwise>

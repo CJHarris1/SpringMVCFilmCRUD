@@ -1,6 +1,7 @@
 package com.skilldistillery.film.controllers;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,14 @@ public class FilmController {
 		Film film = filmDao.findFilmById(ID);
 		model.addAttribute("Id", film);
 		return "getFilmId";
+		
+	}
+	
+	@RequestMapping(path = "GetFilmByKeyword.do", method = RequestMethod.GET)
+	public String getFilmByKeyword(Model model, String keyword) {
+		List<Film> film = filmDao.findFilmByKeyword(keyword);
+		model.addAttribute("films", film);
+		return "searchByKeyword";
 		
 	}
 	
