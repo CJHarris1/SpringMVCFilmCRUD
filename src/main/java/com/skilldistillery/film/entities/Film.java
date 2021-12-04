@@ -10,7 +10,7 @@ public class Film {
 	private int id;
 	private String title;
 	private String description;
-	private LocalDateTime releaseYear;
+	private int releaseYear;
 	private int languageId;
 	private String languageName;
 	private String rating;
@@ -20,7 +20,7 @@ public class Film {
 
 	}
 
-	public Film(int id, String title, String description, LocalDateTime releaseYear, int languageId, String languageName, String rating,
+	public Film(int id, String title, String description, int releaseYear, int languageId, String languageName, String rating,
 			List<Actor> actors) {
 		this.id = id;
 		this.title = title;
@@ -66,11 +66,11 @@ public class Film {
 		this.description = description;
 	}
 
-	public LocalDateTime getReleaseYear() {
+	public int getReleaseYear() {
 		return releaseYear;
 	}
 
-	public void setReleaseYear(LocalDateTime releaseYear) {
+	public void setReleaseYear(int releaseYear) {
 		this.releaseYear = releaseYear;
 	}
 

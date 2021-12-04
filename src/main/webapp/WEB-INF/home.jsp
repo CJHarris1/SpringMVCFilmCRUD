@@ -34,7 +34,16 @@
  	<br>
  	
  	Rating:
- 	<input type="text" name="ID"/>
+ 	<input type="radio" id="G" name="ID" value="G">
+ 	<label for="G">G</label>
+	<input type="radio" id="PG" name="ID" value="PG">
+	<label for="PG">PG</label>
+	<input type="radio" id="PG13" name="ID" value="PG13">
+	<label for="PG13">PG13</label>
+	<input type="radio" id="R" name="ID" value="R">
+	<label for="R">R</label>
+	<input type="radio" id="NC17" name="ID" value="NC17">
+	<label for="NC17">NC17</label>
  	<br>
  	
  	Language:
