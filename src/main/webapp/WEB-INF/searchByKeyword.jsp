@@ -33,7 +33,7 @@
 		</c:forEach>
 		</c:when>
 		<c:otherwise>
-			<p>Invalid id</p>
+			<p>Invalid keyword</p>
 		</c:otherwise>
 		
 		
