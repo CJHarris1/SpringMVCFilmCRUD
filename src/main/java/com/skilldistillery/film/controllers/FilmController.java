@@ -33,7 +33,7 @@ public class FilmController {
 		
 	}
 	
-	@RequestMapping(path = "createNewFilm.do", params = "createID",  method = RequestMethod.POST)
+	@RequestMapping(path = "createNewFilm.do",  method = RequestMethod.POST)
 
 	public String createNewFilm(Model model, String title, String description, int releaseYear, String languageId, String rating ) {
 		
@@ -53,22 +53,22 @@ public class FilmController {
 	public int convertLangId(String langId) {
 		int newLanguageId = 0;
 		switch(langId) {
-		case "language1":
+		case "English":
 			newLanguageId = 1;
 			break;
-		case "language2":
+		case "Italian":
 			newLanguageId = 2;
 			break;
-		case "language3":
+		case "Japanese":
 			newLanguageId = 3;
 			break;
-		case "language4":
+		case "Mandarin":
 			newLanguageId = 4;
 			break;
-		case "language5":
+		case "French":
 			newLanguageId = 5;
 			break;
-		case "language6":
+		case "German":
 			newLanguageId = 6;
 			break;
 		}
