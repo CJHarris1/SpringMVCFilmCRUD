@@ -35,7 +35,7 @@ public class FilmController {
 	
 	@RequestMapping(path = "createNewFilm.do", params = "createID",  method = RequestMethod.POST)
 	public String createNewFilm(Model model, String title, String description, String releaseYear, String languageId, String rating ) {
-		int newLanguageId;
+		int newLanguageId = 0;
 		switch(languageId) {
 		case "language1":
 			newLanguageId = 1;
