@@ -43,6 +43,7 @@ public class FilmController {
 		film.setReleaseYear(releaseYear);
 		film.setLanguageId(convertLangId(languageId));
 		film.setRating(rating);
+		System.out.println(rating);
 		filmDao.createFilm(film);
 		model.addAttribute("createID", film);
 		return "createNewFilm";

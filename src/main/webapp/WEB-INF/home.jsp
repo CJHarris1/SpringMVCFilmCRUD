@@ -22,42 +22,42 @@
  <h3>Create a new film</h3>
  <form action="createNewFilm.do" method="POST">
  	Name:
- 	<input type="text" name="ID"/>
+ 	<input type="text" name="name"/>
  	<br>
  	
  	Description:
- 	<input type="text" name="ID"/>
+ 	<input type="text" name="description"/>
  	<br>
  	
  	Release Year:
- 	<input type="text" name="ID"/>
+ 	<input type="text" name="releaseYear"/>
  	<br>
  	
  	Rating:
- 	<input type="radio" id="G" name="ID" value="G">
+ 	<input type="radio" id="G" name="rating" value="G">
  	<label for="G">G</label>
-	<input type="radio" id="PG" name="ID" value="PG">
+	<input type="radio" id="PG" name="rating" value="PG">
 	<label for="PG">PG</label>
-	<input type="radio" id="PG13" name="ID" value="PG13">
+	<input type="radio" id="PG13" name="rating" value="PG13">
 	<label for="PG13">PG13</label>
-	<input type="radio" id="R" name="ID" value="R">
+	<input type="radio" id="R" name="rating" value="R">
 	<label for="R">R</label>
-	<input type="radio" id="NC17" name="ID" value="NC17">
+	<input type="radio" id="NC17" name="rating" value="NC17">
 	<label for="NC17">NC17</label>
  	<br>
  	
  	Language:
- 	<input type="radio" id="language1" name="language" value="English">
+ 	<input type="radio" id="language1" name="languageId" value="English">
  	<label for="language1">English</label>
-	<input type="radio" id="language2" name="language" value="Italian">
+	<input type="radio" id="language2" name="languageId" value="Italian">
 	<label for="language2">Italian</label>
-	<input type="radio" id="language3" name="language" value="Japanese">
+	<input type="radio" id="language3" name="languageId" value="Japanese">
 	<label for="language3">Japanese</label>
-	<input type="radio" id="language4" name="language" value="Mandarin">
+	<input type="radio" id="language4" name="languageId" value="Mandarin">
 	<label for="language4">Mandarin</label>
-	<input type="radio" id="language5" name="language" value="French">
+	<input type="radio" id="language5" name="languageId" value="French">
 	<label for="language5">French</label>
-	<input type="radio" id="language6" name="language" value="German">
+	<input type="radio" id="language6" name="languageId" value="German">
 	<label for="language6">German</label>
  	<br>
  	<input type="submit" value="Create Film" />
