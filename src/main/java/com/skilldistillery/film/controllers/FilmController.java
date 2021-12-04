@@ -1,5 +1,7 @@
 package com.skilldistillery.film.controllers;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +30,19 @@ public class FilmController {
 		Film film = filmDao.findFilmById(ID);
 		model.addAttribute("ID", film);
 		return "getFilmId";
+		
+	}
+	
+	@RequestMapping(path = "createNewFilm.do", params = "createID",  method = RequestMethod.POST)
+	public String createNewFilm(Model model, String title, String description, String release_year, String language_id, String rating ) {
+		Film film = new Film();
+		film.setTitle(title);
+		film.setDescription(description);
+		film.setReleaseYear(release_year);
+		film.setLanguageId(language_id);
+		film.setRating(rating);
+		model.addAttribute("createID", film);
+		return "createNewFilm";
 		
 	}
 	
