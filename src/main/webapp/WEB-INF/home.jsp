@@ -20,9 +20,9 @@
  
  
  <h3>Create a new film</h3>
- <form action="createNewFilm.do" method="POST">
+ <form action="CreateNewFilm.do" method="POST">
  	Name:
- 	<input type="text" name="name"/>
+ 	<input type="text" name="title"/>
  	<br>
  	
  	Description:

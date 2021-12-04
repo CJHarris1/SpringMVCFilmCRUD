@@ -25,18 +25,16 @@ public class FilmController {
 		
 	}
 	
-	@RequestMapping(path = "GetFilmId.do", params = "ID", method = RequestMethod.GET)
+	@RequestMapping(path = "GetFilmId.do", method = RequestMethod.GET)
 	public String getFilmId(Model model, int ID) {
 		Film film = filmDao.findFilmById(ID);
-		model.addAttribute("ID", film);
+		model.addAttribute("Id", film);
 		return "getFilmId";
 		
 	}
 	
-	@RequestMapping(path = "createNewFilm.do", params = "createID",  method = RequestMethod.POST)
-
+	@RequestMapping(path = "CreateNewFilm.do", method = RequestMethod.POST)
 	public String createNewFilm(Model model, String title, String description, int releaseYear, String languageId, String rating ) {
-		
 		Film film = new Film();
 		film.setTitle(title);
 		film.setDescription(description);

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,18 +9,18 @@
 </head>
 <body>
 	<c:choose>
-		<c:when test="${! empty ID}">
-     Title: <c:out value="${ID.title}" />
+		<c:when test="${! empty Id}">
+     Title: <c:out value="${Id.title}" />
 			<br>
-     Description: <c:out value="${ID.description}" />
+     Description: <c:out value="${Id.description}" />
 			<br>
-     Release Year: <c:out value="${ID.releaseYear}" />
+     Release Year: <c:out value="${Id.releaseYear}" />
 			<br>
-     Language: <c:out value="${ID.languageName}" />
+     Language: <c:out value="${Id.languageName}" />
 			<br>
-     Rating: <c:out value="${ID.rating}" />
+     Rating: <c:out value="${Id.rating}" />
 			<br>
-     Actors: <c:forEach items="${ ID.actors}" var="actor">
+     Actors: <c:forEach items="${ Id.actors}" var="actor">
 				<p>${actor.firstName }${actor.lastName }</p>
 			</c:forEach>
 		</c:when>
