@@ -178,7 +178,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			stmt.setString(1, film.getTitle());
 			stmt.setString(2, film.getDescription());
 			stmt.setString(3, film.getReleaseYear());
-			stmt.setString(4, film.getLanguageId());
+			stmt.setInt(4, film.getLanguageId());
 			stmt.setString(5, film.getRating());
 			uc = stmt.executeUpdate();
 			System.out.println(uc + " film record created.");

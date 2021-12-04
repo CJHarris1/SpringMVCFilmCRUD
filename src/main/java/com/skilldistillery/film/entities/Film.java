@@ -10,7 +10,7 @@ public class Film {
 	private String title;
 	private String description;
 	private String releaseYear;
-	private String languageId;
+	private int languageId;
 	private String languageName;
 	private String rating;
 	private List<Actor> actors;
@@ -19,7 +19,7 @@ public class Film {
 
 	}
 
-	public Film(int id, String title, String description, String releaseYear, String languageId, String languageName, String rating,
+	public Film(int id, String title, String description, String releaseYear, int languageId, String languageName, String rating,
 			List<Actor> actors) {
 		this.id = id;
 		this.title = title;
@@ -33,11 +33,11 @@ public class Film {
 
 	
 	
-	public String getLanguageId() {
+	public int getLanguageId() {
 		return languageId;
 	}
 
-	public void setLanguageId(String languageId) {
+	public void setLanguageId(int languageId) {
 		this.languageId = languageId;
 	}
 
