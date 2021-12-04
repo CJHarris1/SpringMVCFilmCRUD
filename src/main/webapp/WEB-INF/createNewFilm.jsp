@@ -36,5 +36,12 @@
 	<p>
 		<a href="home.do">HOME</a>
 	</p>
+	
+	<p>
+	<a href="check.do">Delete Film</a>
+	</p>
+	<p>
+	<a href="updateFilm.do">Update Films</a>
+	</p>
 </body>
 </html>
