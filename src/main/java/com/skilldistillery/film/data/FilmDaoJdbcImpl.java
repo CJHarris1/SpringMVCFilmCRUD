@@ -49,7 +49,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				film.setId(rs.getInt("film.id"));
 				film.setTitle(rs.getString("film.title"));
 				film.setDescription(rs.getString("film.description"));
-				film.setReleaseYear(rs.getString("film.release_year"));
+				film.setReleaseYear(rs.getInt("film.release_year"));
 				film.setLanguageName(rs.getString("language.name"));
 				film.setRating(rs.getString("film.rating"));
 				film.setActors(findActorsByFilmId(filmId));
@@ -145,7 +145,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				film.setId(rs.getInt("id"));
 				film.setTitle(rs.getString("title"));
 				film.setDescription(rs.getString("description"));
-				film.setReleaseYear(rs.getString("film.release_year"));
+				film.setReleaseYear(rs.getInt("film.release_year"));
 				film.setLanguageName(rs.getString("language.name"));
 				film.setRating(rs.getString("rating"));
 				int id = film.getId();
@@ -177,7 +177,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			stmt = conn.prepareStatement(sqltxt, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, film.getTitle());
 			stmt.setString(2, film.getDescription());
-			stmt.setString(3, film.getReleaseYear());
+			stmt.setInt(3, film.getReleaseYear());
 			stmt.setInt(4, film.getLanguageId());
 			stmt.setString(5, film.getRating());
 			uc = stmt.executeUpdate();
@@ -260,7 +260,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			stmt = conn.prepareStatement(sqltxt, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, film.getTitle());
 			stmt.setString(2, film.getDescription());
-			stmt.setString(3, film.getReleaseYear());
+			stmt.setInt(3, film.getReleaseYear());
 			stmt.setString(4, film.getRating());
 			uc = stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();
