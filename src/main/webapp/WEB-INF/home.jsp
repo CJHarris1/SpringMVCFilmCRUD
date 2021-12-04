@@ -8,7 +8,10 @@
 </head>
 <body>
 <h1>Films R Us!</h1>
-
-${TEST}
+<h3>Search Film with id<h3>
+  <form action="GetFilmId.do" method="GET">
+ 	ID:
+ 	<input type="text" name="ID"/>
+ 	<input type="submit" value="Find film" />
 </body>
 </html>

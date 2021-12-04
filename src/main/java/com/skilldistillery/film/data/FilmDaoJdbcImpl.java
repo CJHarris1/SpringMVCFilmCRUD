@@ -18,8 +18,8 @@ import com.skilldistillery.film.entities.Film;
 public class FilmDaoJdbcImpl implements FilmDAO {
 
 	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false";
-	private String user = "student";
-	private String pass = "student";
+	private final String user = "student";
+	private final String pass = "student";
 
 	public FilmDaoJdbcImpl() {
 		try {
@@ -39,8 +39,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		ResultSet rs;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
-			sqltxt = "SELECT film.id, film.title, film.description, film.release_year, film.rating, language.name FROM "
-					+ "film JOIN language ON language.id = film.language_id WHERE film.id = ?;";
+			sqltxt = "SELECT film.id, film.title, film.description, film.release_year, film.rating, language.name FROM film JOIN language ON language.id = film.language_id WHERE film.id = ?;";
 			stmt = conn.prepareStatement(sqltxt);
 			stmt.setInt(1, filmId);
 			rs = stmt.executeQuery();
@@ -103,10 +102,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		ResultSet rs;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
-			sqltxt = "SELECT actor.id, actor.first_name, actor.last_name \n"
-					+ "FROM film_actor JOIN actor ON actor.id = film_actor.actor_id\n"
-					+ "                JOIN film ON film_actor.film_id = film.id\n"
-					+ "                WHERE film_actor.film_id = ?;";
+			sqltxt = "SELECT actor.id, actor.first_name, actor.last_name FROM film_actor JOIN actor ON actor.id = film_actor.actor_id JOIN film ON film_actor.film_id = film.id WHERE film_actor.film_id = ?;";
 			stmt = conn.prepareStatement(sqltxt);
 
 			stmt.setInt(1, filmId);
@@ -138,8 +134,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		ResultSet rs;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
-			sqltxt = "SELECT film.id, film.title, film.description, film.release_year, film.rating, language.name "
-					+ "FROM film JOIN language ON language.id = film.language_id WHERE title LIKE ? OR description LIKE ?;";
+			sqltxt = "SELECT film.id, film.title, film.description, film.release_year, film.rating, language.name FROM film JOIN language ON language.id = film.language_id WHERE title LIKE ? OR description LIKE ?;";
 			stmt = conn.prepareStatement(sqltxt);
 			stmt.setString(1, "%" + keyword + "%");
 			stmt.setString(2, "%" + keyword + "%");
