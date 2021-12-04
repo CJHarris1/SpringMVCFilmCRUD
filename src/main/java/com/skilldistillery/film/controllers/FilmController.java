@@ -34,12 +34,12 @@ public class FilmController {
 	}
 	
 	@RequestMapping(path = "createNewFilm.do", params = "createID",  method = RequestMethod.POST)
-	public String createNewFilm(Model model, String title, String description, String release_year, String language_id, String rating ) {
+	public String createNewFilm(Model model, String title, String description, String releaseYear, String languageId, String rating ) {
 		Film film = new Film();
 		film.setTitle(title);
 		film.setDescription(description);
-		film.setReleaseYear(release_year);
-		film.setLanguageId(language_id);
+		film.setReleaseYear(releaseYear);
+		film.setLanguageId(languageId);
 		film.setRating(rating);
 		model.addAttribute("createID", film);
 		return "createNewFilm";
