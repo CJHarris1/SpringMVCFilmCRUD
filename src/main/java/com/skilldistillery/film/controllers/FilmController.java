@@ -35,8 +35,21 @@ public class FilmController {
 	
 	@RequestMapping(path = "createNewFilm.do", params = "createID",  method = RequestMethod.POST)
 	public String createNewFilm(Model model, String title, String description, String releaseYear, String languageId, String rating ) {
+		
+		Film film = new Film();
+		film.setTitle(title);
+		film.setDescription(description);
+		film.setReleaseYear(releaseYear);
+		film.setLanguageId(convertLangId(languageId));
+		film.setRating(rating);
+		model.addAttribute("createID", film);
+		return "createNewFilm";
+		
+	}
+	
+	public int convertLangId(String langId) {
 		int newLanguageId = 0;
-		switch(languageId) {
+		switch(langId) {
 		case "language1":
 			newLanguageId = 1;
 			break;
@@ -55,17 +68,11 @@ public class FilmController {
 		case "language6":
 			newLanguageId = 6;
 			break;
-			
 		}
-		Film film = new Film();
-		film.setTitle(title);
-		film.setDescription(description);
-		film.setReleaseYear(releaseYear);
-		film.setLanguageId(newLanguageId);
-		film.setRating(rating);
-		model.addAttribute("createID", film);
-		return "createNewFilm";
-		
+		return newLanguageId;
 	}
 	
+	public String convertRating(String rating) {
+		return null;
+	}
 }
