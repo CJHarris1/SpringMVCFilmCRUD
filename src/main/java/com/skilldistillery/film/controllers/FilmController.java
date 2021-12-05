@@ -20,10 +20,15 @@ public class FilmController {
 	
 	
 	@RequestMapping({"/", "home.do"})
-	public String home(Model model) {
-		model.addAttribute("TEST", "Hello, Spring MVC!");
+	public String home() {
 		return "home";
 		
+	}
+	
+	@RequestMapping("updateMenu.do")
+	public String updateMenu(Model model, Integer Id) {
+		model.addAttribute("Id", Id);
+		return "updateFilm";
 	}
 	
 	@RequestMapping(path = "GetFilmId.do", method = RequestMethod.GET)
@@ -42,8 +47,8 @@ public class FilmController {
 		
 	}
 	
-	@RequestMapping(path = "delete.do", method = RequestMethod.DELETE)
-	public String deleteFilm(Film film) {
+	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
+	public String deleteFilm(Integer film) {
 		boolean deleteWorks = filmDao.deleteFilm(film);
 		if (deleteWorks) {
 			return "home";
@@ -54,9 +59,19 @@ public class FilmController {
 	}
 	
 	@RequestMapping(path="update.do" , method=RequestMethod.POST)
-	public String updateFilm(Film film) {
-		filmDao.updateFilm(film);
-		return "updateFilm";
+	public String updateFilm(Model model, Integer film, String title, String description, int releaseYear, String languageId, String rating ) {
+		Film movie = filmDao.findFilmById(film);
+		movie.setTitle(title);
+		movie.setDescription(description);
+		movie.setReleaseYear(releaseYear);
+		movie.setLanguageId(convertLangId(languageId, movie));
+		movie.setRating(rating);
+		boolean updateWorks = filmDao.updateFilm(movie);
+		model.addAttribute("Id", movie);
+		if(updateWorks) {
+			return "home";
+		}
+		return "error";
 	}
 	
 
@@ -68,7 +83,6 @@ public class FilmController {
 		film.setReleaseYear(releaseYear);
 		film.setLanguageId(convertLangId(languageId, film));
 		film.setRating(rating);
-		System.out.println(rating);
 		filmDao.createFilm(film);
 		model.addAttribute("createID", film);
 		return "createNewFilm";

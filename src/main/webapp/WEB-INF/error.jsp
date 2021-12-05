@@ -8,7 +8,7 @@
 </head>
 <body>
 <p>
-<h1> Error: Film can not be deleted from database.</h1>
+<h1> Error: Please try again.</h1>
 </p>
 <p>
 		<a href="home.do">HOME</a>

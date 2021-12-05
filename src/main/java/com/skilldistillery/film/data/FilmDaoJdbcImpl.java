@@ -212,7 +212,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 	}
 
 	@Override
-	public boolean deleteFilm(Film film) {
+	public boolean deleteFilm(Integer id) {
 		boolean deleteWorks = false;
 		Connection conn = null;
 		String sqltxt;
@@ -224,11 +224,10 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			conn.setAutoCommit(false);
 			sqltxt = "DELETE FROM film WHERE film.id = ?";
 			stmt = conn.prepareStatement(sqltxt);
-			stmt.setInt(1, film.getId());
+			stmt.setInt(1, id);
 			updateCount = stmt.executeUpdate();
 
 			conn.commit();
-			System.out.println("Film id: " + film.getId() + " has been deleted");
 			deleteWorks = true;
 
 			stmt.close();
@@ -249,7 +248,8 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 	}
 
 	@Override
-	public void updateFilm(Film film) {
+	public boolean updateFilm(Film film) {
+		boolean updateWorks = false;
 		Connection conn = null;
 		String sqltxt;
 		PreparedStatement stmt;
@@ -259,16 +259,19 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false);
-			sqltxt = "UPDATE film SET title=?, description=?, release_year=?, rating=? ";
+			sqltxt = "UPDATE film SET title=?, description=?, release_year=?, language_id, rating=? WHERE id = ?";
 			stmt = conn.prepareStatement(sqltxt, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, film.getTitle());
 			stmt.setString(2, film.getDescription());
 			stmt.setInt(3, film.getReleaseYear());
-			stmt.setString(4, film.getRating());
+			stmt.setInt(4, film.getLanguageId());
+			stmt.setString(5, film.getRating());
+			stmt.setInt(6, film.getId());
 			uc = stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();
 
 			conn.commit();
+			updateWorks = true;
 
 			// do we need to close still?
 			rs.close();
@@ -286,6 +289,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				}
 			}
 		}
+		return updateWorks;
 	}
 
 }

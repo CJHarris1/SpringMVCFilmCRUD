@@ -32,20 +32,21 @@
 		</c:otherwise>
 	</c:choose>
 
-	<p>
+	<br><br>
 		<a href="home.do">HOME</a>
-	</p>
-	<form action="delete.do" method="DELETE">
+	<br><br>
+	
+	<form action="updateMenu.do" method="POST">
+	<input type="submit" name= "update film" value="Update film" />
+	<input type="hidden" name= "film" value="${Id.id}" />
+		
+	<br><br>
+	<form action="delete.do" method="POST">
 	<input type="submit" name= "delete film" value="Delete film" />
-	<input type="hidden" name= "film" value="${Id}" />
+	<input type="hidden" name= "film" value="${Id.id}" />
 	</form>
 	
-	<br>
-	<form action="update.do" method="POST">
-	<input type="submit" name= "update film" value="Update film" />
-	<input type="hidden" name= "film" value="${Id}" />
-	</form>
-	<br>
+	
 	
 </body>
 </html>
