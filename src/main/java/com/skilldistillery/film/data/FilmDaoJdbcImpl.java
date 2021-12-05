@@ -39,7 +39,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		ResultSet rs;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
-			sqltxt = "SELECT film.id, film.title, film.description, film.release_year, film.rating, language.name, category.name  FROM film JOIN language ON language.id  = film.language_id JOIN film_category ON film.id = film_category.film_id JOIN category ON film_category.film_id = category.id WHERE film.id = ?";
+			sqltxt = "SELECT film.id, film.title, film.description, film.release_year, film.rating, language.name, category.name  FROM film JOIN language ON language.id  = film.language_id LEFT JOIN film_category ON film.id = film_category.film_id LEFT JOIN category ON film_category.film_id = category.id WHERE film.id = ?";
 			stmt = conn.prepareStatement(sqltxt);
 			stmt.setInt(1, filmId);
 			rs = stmt.executeQuery();
@@ -137,8 +137,8 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			conn = DriverManager.getConnection(URL, user, pass);
 			sqltxt = "SELECT film.id, film.title, film.description, film.release_year, film.rating, language.name, category.name\n"
 					+ "FROM film JOIN language ON language.id = film.language_id \n"
-					+ "JOIN film_category ON film.id = film_category.film_id\n"
-					+ "JOIN category ON film.id = film_category.film_id\n"
+					+ "LEFT JOIN film_category ON film.id = film_category.film_id\n"
+					+ "LEFT JOIN category ON film.id = film_category.film_id\n"
 					+ "WHERE title LIKE ? OR description LIKE ?;";
 			stmt = conn.prepareStatement(sqltxt);
 			stmt.setString(1, "%" + keyword + "%");

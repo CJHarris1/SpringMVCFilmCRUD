@@ -22,31 +22,34 @@
 			<br>
      Rating: <c:out value="${Id.rating}" />
 			<br>
-	 Category: <br><c:out value="${Id.category}"  />
+	 Category: <c:out value="${Id.category}"  />
 	 		<br>
      Actors: <br><c:forEach items="${ Id.actors}" var="actor">
 				${actor.firstName } ${actor.lastName }
 				<br>
 			</c:forEach>
+			<br><br>
+	
+	<form action="updateMenu.do" method="POST">
+	<input type="submit" name= "update film" value="Update film" />
+	<input type="hidden" name= "film" value="${Id.id}" />
+	</form>
+		
+	<br>
+	<form action="delete.do" method="POST">
+	<input type="submit" name= "delete film" value="Delete film" />
+	<input type="hidden" name= "film" value="${Id.id}" />
+	</form>
 		</c:when>
 		<c:otherwise>
 			<p>Invalid id</p>
 		</c:otherwise>
 	</c:choose>
 
-	<br><br>
-		<a href="home.do">HOME</a>
-	<br><br>
 	
-	<form action="updateMenu.do" method="POST">
-	<input type="submit" name= "update film" value="Update film" />
-	<input type="hidden" name= "film" value="${Id.id}" />
-		
-	<br><br>
-	<form action="delete.do" method="POST">
-	<input type="submit" name= "delete film" value="Delete film" />
-	<input type="hidden" name= "film" value="${Id.id}" />
-	</form>
+	
+	<br>
+		<a href="home.do">HOME</a>
 	
 	
 	

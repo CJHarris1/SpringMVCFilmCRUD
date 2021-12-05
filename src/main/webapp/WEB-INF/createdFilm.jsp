@@ -23,10 +23,19 @@
 			<br>
      Rating: <c:out value="${createID.rating}" />
 			<br>
-     Actors: <br><c:forEach items="${ createID.actors}" var="actor">
-				${actor.firstName } ${actor.lastName }
-				<br>
-			</c:forEach>
+			<br>
+	<form action="updateMenu.do" method="POST">
+	<input type="submit" name= "update film" value="Update film" />
+	<input type="hidden" name= "film" value="${createID.id}" />
+	</form>
+	
+	<br>
+	<form action="delete.do" method="POST">
+	<input type="submit" name= "delete film" value="Delete film" />
+	<input type="hidden" name= "film" value="${createID.id}" />
+	</form>
+	<br>
+	
 		</c:when>
 		<c:otherwise>
 			<p>Invalid id</p>
@@ -35,13 +44,6 @@
 
 	<p>
 		<a href="home.do">HOME</a>
-	</p>
-	
-	<p>
-	<a href="delete.do">Delete Film</a>
-	</p>
-	<p>
-	<a href="updateFilm.do">Update Films</a>
 	</p>
 </body>
 </html>

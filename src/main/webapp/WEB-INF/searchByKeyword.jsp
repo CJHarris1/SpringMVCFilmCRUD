@@ -31,18 +31,21 @@
 				${actor.firstName} ${actor.lastName}
 				<br>
 			</c:forEach>
-			<br>
-			<form action="delete.do" method="DELETE">
-	<input type="submit" name= "delete film" value="Delete film" />
-	<input type="hidden" name= "film" value="${Id}" />
+			
+	<br>
+	<form action="updateMenu.do" method="POST">
+	<input type="submit" name= "update film" value="Update film" />
+	<input type="hidden" name= "film" value="${film.id}" />
 	</form>
 	
 	<br>
-	<form action="update.do" method="POST">
-	<input type="submit" name= "update film" value="Update film" />
-	<input type="hidden" name= "film" value="${Id}" />
+	<form action="delete.do" method="POST">
+	<input type="submit" name= "delete film" value="Delete film" />
+	<input type="hidden" name= "film" value="${film.id}" />
 	</form>
 	<br>
+	<a href="home.do">HOME</a>
+	<br><br><hr>
 		</c:forEach>
 		</c:when>
 		<c:otherwise>
@@ -50,8 +53,8 @@
 		</c:otherwise>
 	</c:choose>
 
-	<p>
-		<a href="home.do">HOME</a>
-	</p>
+	
+		
+	
 </body>
 </html>

@@ -48,15 +48,16 @@
 	<label for="R">R</label>
 	<input type="radio" id="NC17" name="rating" value="NC17">
 	<label for="NC17">NC17</label>
-			<br>
+			<br><br>
     
     
     
     
-	<input type="submit" name= "update film" value="Update film" />
+	<input type="submit" name= "update film" value="Submit Update" />
 	<input type="hidden" name= "film" value="${Id.id}" />
-	<br>
-    
+	<br><br>
+	
+    <a href="home.do">HOME</a>
     
     
     

@@ -1,6 +1,5 @@
 package com.skilldistillery.film.controllers;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +53,7 @@ public class FilmController {
 	public String deleteFilm(Integer film) {
 		boolean deleteWorks = filmDao.deleteFilm(film);
 		if (deleteWorks) {
-			return "home";
+			return "deletedFilm";
 		}
 		else {
 			return "error";
@@ -88,7 +87,7 @@ public class FilmController {
 		film.setRating(rating);
 		filmDao.createFilm(film);
 		model.addAttribute("createID", film);
-		return "createNewFilm";
+		return "createdFilm";
 		
 	}
 	
