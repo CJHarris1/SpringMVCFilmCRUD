@@ -38,7 +38,7 @@
 	</p>
 	
 	<p>
-	<a href="check.do">Delete Film</a>
+	<a href="delete.do">Delete Film</a>
 	</p>
 	<p>
 	<a href="updateFilm.do">Update Films</a>

@@ -58,6 +58,13 @@ public class FilmController {
 		
 	}
 	
+	@RequestMapping(path = "deleteFilm.do", method = RequestMethod.DELETE)
+	public String deleteFilm(Model model, int ID) {
+		model.addAttribute(model);
+	
+		return "home";
+	}
+	
 	public int convertLangId(String langId, Film film) {
 		int newLanguageId = 0;
 		switch(langId) {
