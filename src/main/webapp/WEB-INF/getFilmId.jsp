@@ -10,7 +10,7 @@
 <body>
 	<c:choose>
 		<c:when test="${! empty Id}">
-	 Film ID: <c:out value="${createID.id}" />
+	 Film ID: <c:out value="${Id.id}" />
 			<br>
      Title: <c:out value="${Id.title}" />
 			<br>
@@ -35,8 +35,12 @@
 	<p>
 		<a href="home.do">HOME</a>
 	</p>
+	<form action="delete.do" method="POST">
+	<input type="submit" name= "delete film" value="Delete film" />
+	<input type="hidden" name= "film" value="${Id}" />
+	</form>
 	<p>
-	<a href="delete.do">Delete Film</a>
+
 	</p>
 	<p>
 	<a href="updateFilm.do">Update Film</a>

@@ -212,7 +212,8 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 	}
 
 	@Override
-	public void deleteFilm(Film film) {
+	public boolean deleteFilm(Film film) {
+		boolean deleteWorks = false;
 		Connection conn = null;
 		String sqltxt;
 		PreparedStatement stmt;
@@ -228,6 +229,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 
 			conn.commit();
 			System.out.println("Film id: " + film.getId() + " has been deleted");
+			deleteWorks = true;
 
 			stmt.close();
 			conn.close();
@@ -243,6 +245,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				}
 			}
 		}
+		return deleteWorks;
 	}
 
 	@Override
