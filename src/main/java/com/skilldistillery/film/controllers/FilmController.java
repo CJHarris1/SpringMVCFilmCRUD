@@ -53,7 +53,11 @@ public class FilmController {
 		}
 	}
 	
-	//create update.do
+	@RequestMapping(path="update.do" , method=RequestMethod.POST)
+	public String updateFilm(Film film) {
+		filmDao.updateFilm(film);
+		return "updateFilm";
+	}
 	
 
 	@RequestMapping(path = "CreateNewFilm.do", method = RequestMethod.POST)
