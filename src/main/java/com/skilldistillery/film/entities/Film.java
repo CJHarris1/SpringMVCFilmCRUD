@@ -15,13 +15,14 @@ public class Film {
 	private String languageName;
 	private String rating;
 	private List<Actor> actors;
+	private String category;
 
 	public Film() {
 
 	}
 
 	public Film(int id, String title, String description, int releaseYear, int languageId, String languageName, String rating,
-			List<Actor> actors) {
+			List<Actor> actors, String category) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -30,10 +31,19 @@ public class Film {
 		this.languageName = languageName;
 		this.rating = rating;
 		this.actors = actors;
+		this.category = category;
 	}
 
 	
 	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	public int getLanguageId() {
 		return languageId;
 	}

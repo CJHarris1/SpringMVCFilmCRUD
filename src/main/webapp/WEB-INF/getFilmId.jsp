@@ -22,6 +22,8 @@
 			<br>
      Rating: <c:out value="${Id.rating}" />
 			<br>
+	 Category: <br><c:out value="${Id.category}"  />
+	 		<br>
      Actors: <br><c:forEach items="${ Id.actors}" var="actor">
 				${actor.firstName } ${actor.lastName }
 				<br>
