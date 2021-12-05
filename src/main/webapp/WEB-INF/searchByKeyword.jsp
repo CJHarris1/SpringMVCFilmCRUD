@@ -30,6 +30,17 @@
 				<br>
 			</c:forEach>
 			<br>
+			<form action="delete.do" method="DELETE">
+	<input type="submit" name= "delete film" value="Delete film" />
+	<input type="hidden" name= "film" value="${Id}" />
+	</form>
+	
+	<br>
+	<form action="update.do" method="POST">
+	<input type="submit" name= "update film" value="Update film" />
+	<input type="hidden" name= "film" value="${Id}" />
+	</form>
+	<br>
 		</c:forEach>
 		</c:when>
 		<c:otherwise>
