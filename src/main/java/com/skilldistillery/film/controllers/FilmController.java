@@ -26,8 +26,11 @@ public class FilmController {
 	}
 	
 	@RequestMapping("updateMenu.do")
-	public String updateMenu(Model model, Integer Id) {
-		model.addAttribute("Id", Id);
+	public String updateMenu(Model model, Integer film) {
+		System.out.println(film + "**********");
+		Film movie = filmDao.findFilmById(film);
+		System.out.println(movie + "********");
+		model.addAttribute("Id", movie);
 		return "updateFilm";
 	}
 	
@@ -58,7 +61,7 @@ public class FilmController {
 		}
 	}
 	
-	@RequestMapping(path="update.do" , method=RequestMethod.POST)
+	@RequestMapping(path="updateFilm.do" , method=RequestMethod.POST)
 	public String updateFilm(Model model, Integer film, String title, String description, int releaseYear, String languageId, String rating ) {
 		Film movie = filmDao.findFilmById(film);
 		movie.setTitle(title);

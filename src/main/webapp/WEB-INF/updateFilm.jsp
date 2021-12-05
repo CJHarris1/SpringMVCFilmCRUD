@@ -13,16 +13,16 @@
 		<c:when test="${! empty Id}">
 	 Film ID: <c:out value="${Id.id}" />
 			<br>
-     Title: <c:out value="${Id.title}" />
+     Title: <c:out value="${Id.title}" /><br>
      Edit title: <input type="text" name="title"/>
 			<br>
-     Description: <c:out value="${Id.description}" />
+     Description: <c:out value="${Id.description}" /><br>
      Edit description: <input type="text" name="description"/>
 			<br>
-     Release Year: <c:out value="${Id.releaseYear}" />
+     Release Year: <c:out value="${Id.releaseYear}" /><br>
      Edit release year: <input type="text" name="releaseYear"/>
 			<br>
-     Language: <c:out value="${Id.languageName}" />
+     Language: <c:out value="${Id.languageName}" /><br>
      Edit language:
  	<input type="radio" id="language1" name="languageId" value="English">
  	<label for="language1">English</label>
@@ -37,7 +37,7 @@
 	<input type="radio" id="language6" name="languageId" value="German">
 	<label for="language6">German</label>
 			<br>
-     Rating: <c:out value="${Id.rating}" />
+     Rating: <c:out value="${Id.rating}" /><br>
      Edit rating: <input type="radio" id="G" name="rating" value="G">
  	<label for="G">G</label>
 	<input type="radio" id="PG" name="rating" value="PG">
@@ -54,7 +54,7 @@
     
     
 	<input type="submit" name= "update film" value="Update film" />
-	<input type="hidden" name= "film" value="${Id}" />
+	<input type="hidden" name= "film" value="${Id.id}" />
 	<br>
     
     
