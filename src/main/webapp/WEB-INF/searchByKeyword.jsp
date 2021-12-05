@@ -35,13 +35,6 @@
 		<c:otherwise>
 			<p>Invalid keyword</p>
 		</c:otherwise>
-		
-		
-		
-		
-		
-		
-	 
 	</c:choose>
 
 	<p>

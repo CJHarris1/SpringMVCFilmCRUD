@@ -42,6 +42,12 @@ public class FilmController {
 		
 	}
 	
+	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
+	public String deleteFilm(Film film, Model model) {
+		filmDao.deleteFilm(film);
+		return "home";
+	}
+	
 
 	@RequestMapping(path = "CreateNewFilm.do", method = RequestMethod.POST)
 	public String createNewFilm(Model model, String title, String description, int releaseYear, String languageId, String rating ) {
@@ -57,6 +63,8 @@ public class FilmController {
 		return "createNewFilm";
 		
 	}
+	
+	
 	
 	public int convertLangId(String langId, Film film) {
 		int newLanguageId = 0;
@@ -89,7 +97,4 @@ public class FilmController {
 		return newLanguageId;
 	}
 	
-	public String convertRating(String rating) {
-		return null;
-	}
 }
