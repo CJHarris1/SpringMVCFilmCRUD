@@ -42,7 +42,7 @@ public class FilmController {
 		
 	}
 	
-	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
+	@RequestMapping(path = "delete.do", method = RequestMethod.DELETE)
 	public String deleteFilm(Film film) {
 		boolean deleteWorks = filmDao.deleteFilm(film);
 		if (deleteWorks) {
