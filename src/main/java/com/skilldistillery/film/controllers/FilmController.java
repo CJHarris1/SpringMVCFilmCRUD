@@ -43,9 +43,14 @@ public class FilmController {
 	}
 	
 	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
-	public String deleteFilm(Film film, Model model) {
-		filmDao.deleteFilm(film);
-		return "home";
+	public String deleteFilm(Film film) {
+		boolean deleteWorks = filmDao.deleteFilm(film);
+		if (deleteWorks) {
+			return "home";
+		}
+		else {
+			return "error";
+		}
 	}
 	
 
