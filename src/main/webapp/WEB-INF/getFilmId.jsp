@@ -39,11 +39,13 @@
 	<input type="submit" name= "delete film" value="Delete film" />
 	<input type="hidden" name= "film" value="${Id}" />
 	</form>
-	<p>
-
-	</p>
-	<p>
-	<a href="updateFilm.do">Update Film</a>
-	</p>
+	
+	<br>
+	<form action="update.do" method="POST">
+	<input type="submit" name= "update film" value="Update film" />
+	<input type="hidden" name= "film" value="${Id}" />
+	</form>
+	<br>
+	
 </body>
 </html>
