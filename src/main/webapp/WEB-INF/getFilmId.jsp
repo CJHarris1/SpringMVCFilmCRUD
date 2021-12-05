@@ -35,7 +35,7 @@
 	<p>
 		<a href="home.do">HOME</a>
 	</p>
-	<form action="delete.do" method="POST">
+	<form action="delete.do" method="DELETE">
 	<input type="submit" name= "delete film" value="Delete film" />
 	<input type="hidden" name= "film" value="${Id}" />
 	</form>
